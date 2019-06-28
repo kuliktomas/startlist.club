@@ -86,9 +86,9 @@
                     @if (!item.Departure.HasValue && Request.IsPilot() && item.Date == DateTime.Today && item.IsCurrentClubPilots())
                     {
                         <div class="btn-group" style="white-space: nowrap;display: flex;">
-                            @Html.ActionLink("-10", "Depart", new { id = item.FlightId, offSet = 10 }, new { title = DateTime.Now.AddMinutes(-10).ToString("HH:mm"), @class = "btn btn-warning", type = "button" })
-                            @Html.ActionLink("-05", "Depart", new { id = item.FlightId, offSet = 5 }, new { title = DateTime.Now.AddMinutes(-5).ToString("HH:mm"), @class = "btn btn-warning", type = "button" })
-                            @Html.ActionLink("Nu", "Depart", new { id = item.FlightId }, new { title = DateTime.Now.ToString("HH:mm"), @class = "btn btn-warning", type = "button" })
+                            @Html.ActionLink("-10", "Depart", new { id = item.FlightId, offSet = 10 }, new { title = DateTime.Now.AddMinutes(-10).ToString("HH:mm"), @class = "btn btn-success", type = "button" })
+                            @Html.ActionLink("-05", "Depart", new { id = item.FlightId, offSet = 5 }, new { title = DateTime.Now.AddMinutes(-5).ToString("HH:mm"), @class = "btn btn-success", type = "button" })
+                            @Html.ActionLink("Nu", "Depart", new { id = item.FlightId }, new { title = DateTime.Now.ToString("HH:mm"), @class = "btn btn-success", type = "button" })
                         </div>
                     }
                     else
