@@ -7,13 +7,13 @@ namespace FlightJournal.Web.Migrations.FlightContext
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddTableforairspaceinformation : IMigrationMetadata
+    public sealed partial class AddAirspaceinformationtable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTableforairspaceinformation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddAirspaceinformationtable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201906281438167_Add-Table-for-airspace-information"; }
+            get { return "201907151532574_Add-Airspace-information-table"; }
         }
         
         string IMigrationMetadata.Source

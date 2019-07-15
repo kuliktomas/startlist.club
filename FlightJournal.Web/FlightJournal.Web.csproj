@@ -224,6 +224,11 @@
     <Compile Include="Migrations\FlightContext\201903242342588_PilotLogEntry-extended-with-TrainingLessons.Designer.cs">
       <DependentUpon>201903242342588_PilotLogEntry-extended-with-TrainingLessons.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\FlightContext\201907151532574_Add-Airspace-information-table.cs" />
+    <Compile Include="Migrations\FlightContext\201907151532574_Add-Airspace-information-table.Designer.cs">
+      <DependentUpon>201907151532574_Add-Airspace-information-table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AirspaceInfo.cs" />
     <Compile Include="Models\InstructorPilotRelation.cs" />
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\LogbookViewModels.cs" />
@@ -617,6 +622,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\FlightContext\201903242342588_PilotLogEntry-extended-with-TrainingLessons.resx">
       <DependentUpon>201903242342588_PilotLogEntry-extended-with-TrainingLessons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\FlightContext\201907151532574_Add-Airspace-information-table.resx">
+      <DependentUpon>201907151532574_Add-Airspace-information-table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

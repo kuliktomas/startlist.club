@@ -29,6 +29,7 @@ namespace FlightJournal.Web.Models
         //public DbSet<PilotLogEntryVersionHistory> PilotLogEntryVersions { get; set; }
         public DbSet<TrainingLessonCategory> TrainingLessonCategories { get; set; }
         public DbSet<TrainingLesson> TrainingLessons { get; set; }
+        public DbSet<AirspaceInfo> AirspaceInfos { get; set; }
 
         /// <summary>
         /// Throw Validation Errors from the Entity as actual Exceptions
@@ -52,7 +53,7 @@ namespace FlightJournal.Web.Models
             this.ThrowValidationErrors();
 
             this.ChangeTracker.Entries<Flight>().Where(f => (f.State == EntityState.Added) || (f.State == EntityState.Deleted) || (f.State == EntityState.Modified))
-                                    .ToList<DbEntityEntry<Flight>>()
+                                    .ToList()
                                     .ForEach((c => this.FlightVersions.Add(new FlightVersionHistory((Flight)c.Entity, c.State))));
 
             return base.SaveChanges();
@@ -117,6 +118,12 @@ namespace FlightJournal.Web.Models
             modelBuilder.Entity<PilotLogEntry>()
                         .HasOptional(i => i.TrainingLessonApprovedByFlightInstructor)
                         .WithMany()
+                        .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity <AirspaceInfo>()
+                        .HasRequired(i => i.Pilot)
+                        .WithMany()
+                        .HasForeignKey(m => m.PilotId)
                         .WillCascadeOnDelete(false);
         }
     }
